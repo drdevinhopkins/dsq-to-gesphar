@@ -20,6 +20,9 @@ def extract_tables(feed):
 #     return first_page.extract_text()
 
 uploaded_file = st.sidebar.file_uploader('Choose your .pdf file', type="pdf")
+
+iframe_url = st.sidebar.text_area('URL to display', "https://docs.streamlit.io/en/latest")
+
 if uploaded_file is not None:
     text, df = extract_tables(uploaded_file)
     dob = text[4]['text']
@@ -45,4 +48,4 @@ else:
 import streamlit.components.v1 as components
 
 # embed streamlit docs in a streamlit app
-components.iframe("https://docs.streamlit.io/en/latest", width=1400, height=1024, scrolling=True)
+components.iframe(iframe_url, width=1400, height=1024, scrolling=True)

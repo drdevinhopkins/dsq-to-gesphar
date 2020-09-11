@@ -64,7 +64,11 @@ st.subheader("2. Load the PDF")
 uploaded_file = st.file_uploader('Choose your .pdf file', type="pdf")
 
 st.markdown('You can use this anonymized sample: ')
-sample_pdf = '[Sample PDF](https://www.dropbox.com/s/syzc62irybqbhox/john-doe.pdf?dl=1)'
+
+if st.button('Load Sample PDF'):
+    uploaded_file = 'john-doe.pdf'
+
+sample_pdf = '[Link to Sample PDF](https://www.dropbox.com/s/syzc62irybqbhox/john-doe.pdf?dl=1)'
 st.markdown(sample_pdf, unsafe_allow_html=True)
 
 # iframe_url = st.sidebar.text_area('URL to display', "https://docs.streamlit.io/en/latest")

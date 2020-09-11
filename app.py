@@ -5,7 +5,14 @@ from fuzzywuzzy import fuzz
 from fuzzywuzzy import process
 import re
 
-st.sidebar.title('DSQ to GesPhar')
+hide_menu_style = """
+        <style>
+        #MainMenu {visibility: hidden;}
+        </style>
+        """
+st.markdown(hide_menu_style, unsafe_allow_html=True)
+
+st.title('DSQ to GesPhar')
 
 st.set_option('deprecation.showfileUploaderEncoding', False)
 
